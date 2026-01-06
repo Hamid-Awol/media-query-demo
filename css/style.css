@@ -1,0 +1,101 @@
+/* =========================================
+   1. GLOBAL STYLES & RESET
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
+/* =========================================
+   2. REUSABLE UTILITIES & TYPOGRAPHY
+   ========================================= */
+.center {
+  background-color: dodgerblue;
+  color: yellow;
+  text-align: center;
+}
+
+span {
+  font-weight: bold;
+  color: rgb(182, 5, 5);
+}
+
+.paragraphs p {
+  line-height: 1.5;
+  margin: 2%;
+}
+
+/* =========================================
+   3. IMAGE GALLERY STYLING
+   ========================================= */
+/* Common properties for all puppy/cat images */
+.bothImages {
+  height: 310px;
+  width: 308px;
+  background-size: cover;
+  background-position: center;
+  margin: 5px auto;
+}
+
+.image-1 {
+  background-image: url(../images/puppy-1.jpg);
+}
+
+.image-2 {
+  background-image: url(../images/puppy-2.jpg);
+}
+
+/* =========================================
+   4. RESPONSIVE DESIGN (Media Queries)
+   ========================================= */
+
+/* Tablet View: Switch to flex layout and swap images */
+@media (min-width: 700px) {
+  .paragraphs {
+    display: flex;
+  }
+
+  /* Hide the middle paragraph for cleaner tablet UI */
+  .p2 {
+    display: none;
+  }
+
+  .imageContainer {
+    display: flex;
+    width: 680px;
+    margin: 0 auto;
+  }
+
+  /* Change image source for larger screens */
+  .image-2 {
+    background-image: url(../images/cat.jpeg);
+  }
+}
+
+/* Desktop View: Full layout with enhanced readability */
+@media (min-width: 1000px) {
+  .p2 {
+    display: block; /* Bring back the middle paragraph */
+  }
+
+  .paragraphs {
+    width: 950px;
+    margin: 0 auto;
+  }
+
+  /* Stylized text boxes for high-resolution screens */
+  .paragraphs p {
+    background-color: rgb(222, 222, 120);
+    color: black;
+  }
+
+  .imageContainer {
+    width: 550px;
+  }
+}
